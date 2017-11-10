@@ -1,0 +1,5 @@
+<div class="container">
+  <tr *ngFor="let row of lsPosts">
+    <td><a routerLink="/postinfo/{{ row.id }}">{{ row.title }}</a></td>
+  </tr>
+</div>

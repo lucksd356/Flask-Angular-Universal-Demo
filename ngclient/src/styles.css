@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+  }
+  
+  
+  /* Custom page CSS
+  -------------------------------------------------- */
+  /* Not required for template or sticky footer method. */
+  
+  body > .container {
+    max-width: 800px;
+    padding: 60px 15px 0;
+  }
+  .container .text-muted {
+    margin: 20px 0;
+  }
+  
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  code {
+    font-size: 80%;
+  }
+  
+  .page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .masthead {
+    padding: 30px 0 30px;
+    margin-bottom: 0;
+  }
+  
+  .masthead h1 {
+    font-size: 75px;
+    line-height: 1;
+    letter-spacing: -2px;
+    font-weight: bold;
+  }
+  
+  .header-section {
+    padding: 50px 0;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+    color: #FFF;
+  }
+
+  .main {
+    padding-top: 20px;
+    min-height: 370px;
+  }
+  
+  .header-row {
+    width: 960px;
+    margin: auto;
+  }
+
+  .header-push {
+    height: 280px;
+  }
+  
+  .footer-left {
+    float: left;
+  }
+  
+  .footer-right {
+    float: right;
+  }
+  
