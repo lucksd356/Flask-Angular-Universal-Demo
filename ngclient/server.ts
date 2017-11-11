@@ -4,6 +4,8 @@ import { renderModuleFactory } from '@angular/platform-server';
 import { enableProdMode } from '@angular/core';
 
 import * as express from 'express';
+import * as request from 'request';
+
 import { join } from 'path';
 import { readFileSync } from 'fs';
 
@@ -41,6 +43,14 @@ app.set('views', join(DIST_FOLDER, 'browser'));
 /* - Example Express Rest API endpoints -
   app.get('/api/**', (req, res) => { });
 */
+const FlaskRESTapi_host = 'http://localhost:5000';
+app.get('/api/**', (req, res) => {
+  request({uri: FlaskRESTapi_host + req.originalUrl}, (error, response, body) => {
+    console.log('error:', error); // Print the error if one occurred and handle it
+    console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+    res.send(body);
+  });
+});
 
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
