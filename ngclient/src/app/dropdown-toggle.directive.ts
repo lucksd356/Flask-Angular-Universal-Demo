@@ -10,11 +10,4 @@ export class DropdownToggleDirective {
     @HostListener('click', ['$event']) onClick($event: any) {
         $event.preventDefault();
     }
-
-    @HostListener('blur', ['$event']) onBlur($event: any) {
-        if ($event.relatedTarget == null) {
-            this.navbar.clickitem();
-        }
-    }
 }
-
