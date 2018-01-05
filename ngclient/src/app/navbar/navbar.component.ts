@@ -8,18 +8,18 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  isDisplayed = false;   // store state
+  isDropdownDisplayed = false;   // store state
   constructor() { }
 
   ngOnInit() {
   }
 
   toggleDropdown() { // click handler
-      let bool = this.isDisplayed;
-      this.isDisplayed = bool === false ? true : false;
+      let bool = this.isDropdownDisplayed;
+      this.isDropdownDisplayed = bool === false ? true : false;
   }
 
   clickitem() {
-    this.isDisplayed = false;
+    this.isDropdownDisplayed = false;
   }
 }
