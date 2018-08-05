@@ -15,8 +15,10 @@ Starter web application project with Angular Universal frontend and Flask RESTap
 - Flask
 - Flask-SQLAlchemy
 - Flask-RESTless
-- Node.js
-- Angular Universal
+- Node.js 8.x
+- npm 5.x
+- Angular 6.0.0
+- Angular Universal 6.0.0
 
 ### Get Started
 - Create a virtual environment for python 3.6+ using either [conda](https://conda.io/docs/user-guide/index.html) or [virtualenv](https://virtualenv.pypa.io/en/stable/)
