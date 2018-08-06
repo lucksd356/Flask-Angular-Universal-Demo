@@ -48,8 +48,5 @@ Open a new terminal window, change to the `ngclient` directory and install depen
 
 1. Change the host address for Flask RESTapi:
     - Edit *target* in *proxy.config.json*
-    - Edit *FlaskRESTapi_host* in *server.ts*
-    - Edit the proxy address for the *serve:prerender* command in package.json
-
 
 2. Edit *static.paths.ts* to specify routes for prerendering
