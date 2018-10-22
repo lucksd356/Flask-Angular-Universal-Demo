@@ -30,7 +30,7 @@ Starter web application project with Angular Universal frontend and Flask RESTap
 - Change to the download directory and run the Flask app
 >python runserver.py
 - Create and seed the db (the server must still be running, so open a new terminal window first)
->python manage.py create_db && python manage.py seed_db --seedfile 'data/db_items.json'
+>python manage.py create_db && python manage.py seed_db --seedfile ./data/db_items.json
 
 Open a new terminal window, change to the `ngclient` directory and install dependencies:
 >npm install
