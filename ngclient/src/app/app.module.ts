@@ -33,7 +33,7 @@ import { DropdownToggleDirective } from './dropdown-toggle.directive';
       { path: 'postinfo/:post_id', component: PostinfoComponent, pathMatch: 'full'},
       { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
       { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
-    ], {useHash: true}),
+    ]),
     NgbModule.forRoot(),
     HttpClientModule,
     JsonpModule,
