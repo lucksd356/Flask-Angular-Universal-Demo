@@ -1,8 +1,7 @@
 .idea
 .DS_Store
 .vscode
-
-package-lock.json
+morgan.log
 
 # Built #
 /__build__/
@@ -14,9 +13,8 @@ package-lock.json
 /dist-server/
 /compiled/
 
-
 # Node #
-*.log
+npm-debug.log
 /npm-debug.log.*
 
 # Webpack #
