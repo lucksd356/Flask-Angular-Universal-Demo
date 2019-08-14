@@ -9,9 +9,9 @@ def create_sample_db_entry(api_endpoint, payload):
     url = 'http://localhost:5000/' + api_endpoint
     r = requests.post(
         url, data=json.dumps(payload),
-        headers={'Content-Type': 'application/vnd.api+json',
-                 'Accept' : 'application/vnd.api+json'})
-    print(r.text)
+        headers={'content-type': 'application/json',
+                    'accept' : 'application/json'})
+    print('db_entry', r.text)
 
 def create_db():
     db.create_all()
@@ -24,8 +24,8 @@ def drop_db():
 def test_db():
     url = 'http://localhost:5000/dbapi/post'
     r = requests.get(url,
-        headers={'Content-Type': 'application/vnd.api+json',
-                 'Accept' : 'application/vnd.api+json'})
+        headers={'content-type': 'application/json',
+        'accept' : 'application/json'})
     print(r.text)
     return
 
