@@ -1,20 +1,12 @@
 import os
 from flask_restful import abort, Api, Resource
-from flask import jsonify, Response, json
+from flask import Response, json, request
 from flask_backend import app
 from flask_backend.core import db
 from flask_backend.models import Post
 import requests
 
-
 api = Api(app)
-
-# def listposts():
-#     lsY = Post.query.all()
-#     lsResults = []
-#     for dcY in lsY:
-#         lsResults.append({'id': dcY.id, 'title': dcY.title})
-#     return lsResults
 
 def _posts(post_id):
     if post_id == ':':
@@ -39,6 +31,23 @@ class PostDetail(Resource):
         return Response(json_response,
                     status=200, #html_codes.HTTP_OK_BASIC,
                     mimetype='application/json')
-
-
+##
+## Actually setup the Api resource routing here
+##
 api.add_resource(PostDetail, '/api/postinfo/<post_id>/')
+
+
+class AddPost(Resource):
+    def post(self):
+        dcAttributes = request.json['data']['attributes']
+        body = dcAttributes['body']
+        title = dcAttributes['title']
+        new_post = Post(title, body)
+        db.session.add(new_post)
+        db.session.commit()
+        lsResults = _posts(new_post.id)
+        json_response = json.dumps({'data' : lsResults})
+        return Response(json_response,
+                    status=200, #html_codes.HTTP_OK_BASIC,
+                    mimetype='application/json')
+api.add_resource(AddPost, '/dbapi/post/')
