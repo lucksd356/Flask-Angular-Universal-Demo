@@ -34,7 +34,7 @@ import { DropdownToggleDirective } from './dropdown-toggle.directive';
     ],  {useHash: true}),
     NgbModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
