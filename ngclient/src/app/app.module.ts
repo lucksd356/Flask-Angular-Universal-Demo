@@ -1,10 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
@@ -31,11 +29,12 @@ import { DropdownToggleDirective } from './dropdown-toggle.directive';
       { path: 'about', component: AboutComponent, pathMatch: 'full'},
       { path: 'blog', component: BlogComponent, pathMatch: 'full'},
       { path: 'postinfo/:post_id', component: PostinfoComponent, pathMatch: 'full'},
-      { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
-      { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
+      { path: 'lazy', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)},
+      { path: 'lazy/nested', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)}
     ],  {useHash: true}),
-    NgbModule.forRoot(),
+    NgbModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     JsonpModule,
   ],
   providers: [],
