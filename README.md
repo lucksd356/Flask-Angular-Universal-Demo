@@ -1,4 +1,7 @@
 # Flask Angular-Universal Demo
+
+**This project has not been updated to be compatible with the latest version of Angular Universal**.
+
 Starter web application project with Angular Universal frontend and Flask RESTapi backend
 [ngudemo](http://ngudemo.vectoranalytics.ai)
 
